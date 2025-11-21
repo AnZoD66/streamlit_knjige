@@ -34,7 +34,7 @@ st.subheader("Dodajte novu knjigu")
 naslov = st.text_input("Naslov")
 autor = st.text_input("Autor")
 godina = st.number_input("Godina", step=1, format="%d")
-zanr = st.text_input("Autor")
+zanr = st.text_input("Žanr")
 ocjena = st.slider("Ocjena", 1, 10)
 
 if st.button("Dodajte knjigu"):
@@ -77,6 +77,7 @@ st.subheader("Top 5 knjiga")
 
 top5 = df.sort_values(by = "Ocjena", ascending=False).head(5)
 st.table(top5)
+
 
 
 
