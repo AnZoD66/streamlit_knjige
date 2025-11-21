@@ -46,9 +46,8 @@ if st.button("Dodajte knjigu"):
 st.subheader("Pretražite knjige")
 filtrirani = df.copy()
 
-for i in range(2):
-    autor_filt = st.text_input("Pretražite po autoru")
-    zanr_filt = st.text_input("Pretražite po žanru")
+autor_filt = st.text_input("Pretražite po autoru")
+zanr_filt = st.text_input("Pretražite po žanru", key="zanr_input")
 godina_filt = st.number_input("Pretražite po godini", step=1, format="%d")
 
 if autor_filt:
@@ -78,5 +77,6 @@ st.subheader("Top 5 knjiga")
 
 top5 = df.sort_values(by = "Ocjena", ascending=False).head(5)
 st.table(top5)
+
 
 
