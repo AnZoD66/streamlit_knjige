@@ -25,7 +25,7 @@ df, worksheet = ucitaj_podatke(SHEET_URL, SHEET_NAME)
 df["Godina"] = pd.to_numeric(df["Godina"])
 df["Ocjena"] = pd.to_numeric(df["Ocjena"])
 
-st.title("Moje najdraže knjige od mog najdražeg autora.")
+st.title("Moje najdraže knjige.")
 
 st.subheader("Trenutni popis knjiga.")
 st.dataframe(df)
@@ -80,6 +80,7 @@ st.subheader("Top 5 knjiga")
 
 top5 = df.sort_values(by = "Ocjena", ascending=False).head(5)
 st.table(top5)
+
 
 
 
