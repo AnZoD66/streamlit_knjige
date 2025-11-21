@@ -63,7 +63,10 @@ st.dataframe(filtrirani)
 
 st.subheader("Brisanje knjiga")
 
-knjige_opcije = df.apply(lambda row: f"{row['Naslov']}-{row['Autor']} ({row['Godina']})", axis=1).tolist()
+knjige_opcije = df.apply(
+    lambda row: f"{row['Naslov']}-{row['Autor']} ({row['Godina']})",
+    axis=1
+).tolist()
 knjige_za_brisanje = st.selectbox("Odaberite knjigu za brisanje", options=knjige_opcije)
 
 if st.button("Obrišite knjigu"):
@@ -77,6 +80,7 @@ st.subheader("Top 5 knjiga")
 
 top5 = df.sort_values(by = "Ocjena", ascending=False).head(5)
 st.table(top5)
+
 
 
 
