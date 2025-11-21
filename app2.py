@@ -19,7 +19,7 @@ def ucitaj_podatke(sheet_url, sheet_name):
     return pd.DataFrame(data), worksheet
 
 SHEET_URL = st.secrets["sheet_url"]
-SHEET_NAME = "knjige"
+SHEET_NAME = "list"
 df, worksheet = ucitaj_podatke(SHEET_URL, SHEET_NAME)
 
 df["Godina"] = pd.to_numeric(df["Godina"])
@@ -77,3 +77,4 @@ st.subheader("Top 5 knjiga")
 
 top5 = df.sort_values(by = "Ocjena", ascending=False).head(5)
 st.table(top5)
+
